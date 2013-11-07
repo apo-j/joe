@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brandex</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="./Libs/bxslider/jquery.bxslider.css">
+    <link rel="stylesheet/less" type="text/css" href="./Less/site.less">
+    <!--<link rel="stylesheet" href="./CSS/site.css">-->
+</head>
+<body>
+<header>
+    <nav class="container">
+        <menu class="language" data-bind="visible:static.isTranslateOn">
+            <a class='ln-switcher zh' data-ln="zh" data-bind="click:switchLanguage" href="javascript:void(0)">zh
+            </a>
+            <a class='ln-switcher en' data-ln="en" data-bind="click:switchLanguage" href="javascript:void(0)">en
+            </a>
+            <a class='ln-switcher fr' data-ln="fr" data-bind="click:switchLanguage" href="javascript:void(0)">fr
+            </a>
+        </menu>
+        <ul data-bind="foreach:module.navBar.items">
+          <li data-bind="css:{'active':isActive()}, visible:on()">
+                <a href="javascript:void(0)" data-bind="click:$root.module.toggle,text:title, attr:attr, dataAttr:dataAttr"></a>
+          </li>
+        </ul>
+    </nav>
+</header>
+
+<script type="text/html" id="bloc">
+    <div class="bloc" data-bind="display:{on: on, supportLanguages:supportLangues}">
+          <span class="title" data-bind="translate:title"></span>
+          <div class="bloc-content standalone"  data-bind="if: type() == enums.blocTypeEnum.Standalone">
+                <!-- ko if: items()[0].type() === enums.blocItemTypeEnum.Text  && items()[0].on()-->
+                <span data-bind="translate:items()[0].title, attr:items()[0].attr, dataAttr:items()[0].dataAttr"></span>
+                <!-- /ko -->
+                <!-- ko if: items()[0].type() === enums.blocItemTypeEnum.Link  && items()[0].on()-->
+                <a data-bind="translate:items()[0].title, attr:{href:items()[0].href()}, dataAttr:items()[0].dataAttr"></a>
+                <!-- /ko -->
+                <!-- ko if: items()[0].type() === enums.blocItemTypeEnum.Image  && items()[0].on()-->
+                <img data-bind="translate:items()[0].title, attr:items()[0].attr, dataAttr:items()[0].dataAttr"/>
+                <!-- /ko -->
+                <!-- ko if: items()[0].type() === enums.blocItemTypeEnum.ImageLink  && items()[0].on()-->
+                <a data-bind="attr:{href:items()[0].href()}"><img data-bind="attr:{src:items()[0].src()}, dataAttr:items()[0].dataAttr"/></a>
+                <!-- /ko -->
+          </div>
+          <div class="bloc-content" data-bind="if: type() === enums.blocTypeEnum.List">
+                <ul class="items" data-bind="foreach:items">
+                     <!-- ko if: type() === enums.blocItemTypeEnum.Text  && on()-->
+                     <li data-bind="display:{on: on, supportLanguages:supportLangues}">
+                         <span data-bind="translate:title, attr:attr, dataAttr:dataAttr"></span>
+                     </li>
+                     <!-- /ko -->
+                     <!-- ko if: type() === enums.blocItemTypeEnum.Link  && on()-->
+                     <li data-bind="display:{on: on, supportLanguages:supportLangues}"><a data-bind="translate:title, attr:{href:href()}, dataAttr:dataAttr" href="javascript:void(0)"></a></li>
+                     <!-- /ko -->
+                     <!-- ko if: type() === enums.blocItemTypeEnum.Image  && on()-->
+                     <li data-bind="display:{on: on, supportLanguages:supportLangues}"><img data-bind="translate:title, attr:attr, dataAttr:dataAttr"/></li>
+                     <!-- /ko -->
+                     <!-- ko if: type() === enums.blocItemTypeEnum.ImageLink  && on()-->
+                     <li data-bind="display:{on: on, supportLanguages:supportLangues}"><a data-bind="attr:{href:href()}"><img data-bind="attr:{src:src()}, dataAttr:dataAttr"/></a></li>
+                </ul>
+          </div>
+    </div>
+</script>
+
+
+<div role="main" id="main">
+    <div class="container" data-bind="foreach:module.pages">
+        <hgroup data-bind="visible:on()">
+            <div id="index" class="page">
+                <div class="sidebar leftsidebar" data-bind="visible:leftSideBar.on(), foreach:leftSideBar.items">
+                    <div data-bind="template: { name: 'bloc', data: $data }"></div>
+                </div>
+                <div class="sidebar rightsidebar" data-bind="visible:rightSideBar.on(), foreach:rightSideBar.items">
+                    <div data-bind="template: { name: 'bloc', data: $data }"></div>
+                </div>
+                <div class="page-body">
+                    <div class="slider" data-bind="slider:{srcs:[{src:'./Images/houses.jpg'},{src:'./Images/hill_trees.jpg'}, {src:'./Images/me_trees.jpg'}]}">
+                    </div>
+                </div>
+            </div>
+        </hgroup>
+    </div>
+</div>
+<div id="page-data-sidebar" style="display:none">
+    {"id":"1","on":true,"leftSideBar":{"id":"2","on":true,"items":[{"id":"9","type":1,"supportLangues":["zh","en","fr"],"on":true,"title":"new bloc","items":[{"id":"10","type":1,"src":"","href":"","supportLangues":["zh","en","fr"],"on":true,"title":"new item","attr":{},"dataAttr":{}},{"id":"11","type":3,"src":"","href":"www.lemonde.fr","supportLangues":["zh","en","fr"],"on":true,"title":"new item","attr":{},"dataAttr":{}},{"id":"12","type":2,"src":"./Images/flag_ch_24.png","href":"","supportLangues":["zh","en","fr"],"on":true,"title":"new item","attr":{},"dataAttr":{}}],"attr":{},"dataAttr":{}}]},"rightSideBar":{"id":"3","on":true,"items":[{"id":"13","type":2,"supportLangues":["zh","en","fr"],"on":true,"title":"new bloc","items":[{"id":"14","type":1,"src":"","href":"","supportLangues":[],"on":true,"title":"asdfawefawef asdfaw asfae asdfawe asdf","attr":{},"dataAttr":{}}],"attr":{},"dataAttr":{}}]},"title":"sfasd","body":{"id":"4","on":true,"items":[{"id":"5","supportLangues":["zh","en","fr"],"on":true,"title":"slider","items":[{"id":"6","type":2,"src":"./Images/hill_trees.jpg","href":"","supportLangues":["zh","en","fr"],"on":true,"title":"new item1","attr":{},"dataAttr":{}},{"id":"7","type":2,"src":"./Images/houses.jpg","href":"","supportLangues":["zh","en","fr"],"on":true,"title":"new item2","attr":{},"dataAttr":{}},{"id":"8","type":2,"src":"./Images/me_trees.jpg","href":"","supportLangues":["zh","fr"],"on":true,"title":"new item4","attr":{},"dataAttr":{}}],"attr":{},"dataAttr":{}}]}}
+</div>
+<div id="page-data-content" style="display:none">
+</div>
+
+<script src="./Scripts/less-1.5.0.min.js" type="text/javascript"></script>
+<script src="./Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="./Libs/bxslider/jquery.bxslider.min.js" type="text/javascript"></script>
+
+<script src="./Scripts/knockout-3.0.0.js" type="text/javascript"></script>
+<script src="./Scripts/knockout.mapping.js" type="text/javascript"></script>
+<script src="./Scripts/knockoutextensions.js" type="text/javascript"></script>
+<script src="./Scripts/Namespace.js" type="text/javascript"></script>
+<script src="./Scripts/jquery.cookie.js" type="text/javascript"></script>
+<script src="./Scripts/global.js" type="text/javascript"></script>
+<script src="./Scripts/static.js" type="text/javascript"></script>
+<script src="./Scripts/enums.js" type="text/javascript"></script>
+<script src="./Scripts/vars.js" type="text/javascript"></script>
+<script src="./Scripts/resources.js" type="text/javascript"></script>
+<script src="./Scripts/dataStorage.js" type="text/javascript"></script>
+<script src="./Scripts/translator.js" type="text/javascript"></script>
+<script src="./Scripts/page-components.js" type="text/javascript"></script>
+<script src="./Scripts/page.js" type="text/javascript"></script>
+
+</body>
+</html>

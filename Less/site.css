@@ -1,0 +1,127 @@
+hgroup {
+  padding: 70px 0 40px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0 0 11.2px;
+  text-rendering: optimizelegibility;
+}
+.page-body {
+  margin-left: 260px;
+  width: 650px;
+}
+ul {
+  list-style-type: none;
+}
+.hide {
+  display: none !important;
+}
+body {
+  background: url(../Images/zone.png) repeat scroll 0 0 #ffffff;
+  font-size: 12px;
+}
+header {
+  background: none repeat scroll 0 0 #434343;
+}
+hgroup {
+  padding: 60px 0 40px;
+}
+hgroup a,
+hgroup a:hover {
+  border: 0;
+  color: #000000;
+}
+.language > a {
+  display: inline-block;
+  width: 24px;
+  height: 22px;
+  margin-top: 7px;
+  text-indent: 99999999px;
+  margin-left: 0;
+}
+.language > a.fr {
+  background-image: url(../Images/flag_fr_24.png);
+}
+.language > a.en {
+  background-image: url(../Images/flag_uk_24.png);
+}
+.language > a.zh {
+  background-image: url(../Images/flag_ch_24.png);
+}
+.sidebar {
+  width: 250px;
+}
+.sidebar.leftsidebar {
+  float: left;
+}
+.sidebar.rightsidebar {
+  float: right;
+}
+.sidebar .bloc {
+  margin: 0 1em 1.1em 2em;
+  color: #000000;
+  margin-left: 0;
+  padding: 1px 0;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px #888888;
+  overflow: hidden;
+}
+.sidebar .bloc > .title {
+  background-image: url(../Images/menusubline_rollover.gif);
+  background-repeat: repeat-x;
+  background-color: #EFEFEF;
+  font-weight: bold;
+  padding-left: 15px;
+  display: block;
+  border-bottom: 1px solid #C6C3C6;
+  pointer-events: none;
+}
+.sidebar .bloc > .bloc-content.standalone {
+  padding-left: 25px;
+}
+.sidebar .bloc > .bloc-content:not(.standalone) > .items > li > a,
+.sidebar .bloc > .bloc-content:not(.standalone) > .items > li span {
+  cursor: pointer;
+}
+.sidebar .bloc > .bloc-content > .items {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+.sidebar .bloc > .bloc-content > .items > li {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.sidebar .bloc > .bloc-content > .items > li:first-child a,
+.sidebar .bloc > .bloc-content > .items > li:first-child span {
+  margin-top: 0px;
+}
+.sidebar .bloc > .bloc-content > .items > li:last-child a,
+.sidebar .bloc > .bloc-content > .items > li:last-child span {
+  border-bottom: 0;
+}
+.sidebar .bloc > .bloc-content > .items > li > a,
+.sidebar .bloc > .bloc-content > .items > li span {
+  line-height: 25px;
+  display: block;
+  border-bottom: 1px solid #C6C3C6;
+  padding-left: 25px;
+}
+.sidebar .bloc > .bloc-content > .items > li > a:hover,
+.sidebar .bloc > .bloc-content > .items > li span:hover {
+  font-weight: bold;
+  background-color: #fff;
+}
+.slider {
+  box-shadow: 0 0 10px #888888;
+}
+.slider > .bx-wrapper > .bx-viewport {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}

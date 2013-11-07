@@ -1,0 +1,65 @@
+﻿.language > a {
+    display:inline-block;
+    width:24px;
+    height:22px;
+    margin-top: 7px;
+    text-indent: 99999999px;
+    margin-left:0;
+}
+.language > a.fr {
+    background-image: url(../Images/flag_fr_24.png);
+}
+.language > a.en {
+    background-image: url(../Images/flag_uk_24.png);
+}
+.language > a.zh {
+    background-image: url(../Images/flag_ch_24.png);
+}
+.sidebar {
+     width: 250px;
+ }
+.leftsidebar {
+	float:left;
+}
+.rightsidebar {
+	float:right;
+}
+hgroup {
+    padding: 70px 0 40px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 0 0 11.2px;
+    text-rendering: optimizelegibility;
+}
+
+.page-body{
+	margin-left:230px;
+}
+
+ul{
+	list-style-type:none;
+}
+
+.hide{
+    display:none !important;
+}
+body{
+    background: url(../Images/zone.png) repeat scroll 0 0 #FFFFFF;
+}
+
+header {
+    background: none repeat scroll 0 0 #434343;
+}
+hgroup {
+    padding: 60px 0 40px;
+}
+.sidebar .bloc{
+    margin: 0 1em 1.1em 2em;
+    color:black;
+    padding:10px;
+    border-radius: 5px;
+    background-color:#F2F2ED;
+    box-shadow: 0 0 5px #888888;
+}

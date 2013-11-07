@@ -1,0 +1,148 @@
+@import "variables.less";
+
+hgroup {
+  padding: 70px 0 40px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0 0 11.2px;
+  text-rendering: optimizelegibility;
+}
+
+.page-body{
+  margin-left:260px;
+  width:650px;
+}
+
+ul{
+  list-style-type:none;
+}
+
+.hide{
+  display:none !important;
+}
+body{
+  background: url(../Images/zone.png) repeat scroll 0 0 #FFFFFF;
+  font-size: 12px;
+}
+
+header {
+  background: none repeat scroll 0 0 #434343;
+}
+hgroup {
+  padding: 60px 0 40px;
+  a,a:hover{
+    border: 0;
+    color:@text-color;
+  }
+}
+
+.language{
+  >a{
+    display:inline-block;
+    width:24px;
+    height:22px;
+    margin-top: 7px;
+    text-indent: 99999999px;
+    margin-left:0;
+  }
+  >a.fr {
+    background-image: url(../Images/flag_fr_24.png);
+  }
+  >a.en {
+    background-image: url(../Images/flag_uk_24.png);
+  }
+  >a.zh {
+    background-image: url(../Images/flag_ch_24.png);
+  }
+}
+
+.sidebar {
+  width: 250px;
+
+  &.leftsidebar {
+    float:left;
+  }
+
+  &.rightsidebar {
+    float:right;
+  }
+
+  .bloc{
+    margin: 0 1em 1.1em 2em;
+    color:@text-color;
+    margin-left:0;
+    padding:1px 0;
+    border-radius: 5px;
+    background-color:#f5f5f5;
+    box-shadow: 0 0 10px #888888;
+    overflow: hidden;
+
+    >.title{
+      background-image: url(../Images/menusubline_rollover.gif);
+      background-repeat: repeat-x;
+      background-color: #EFEFEF;
+      font-weight: bold;
+      padding-left: 15px;
+      display: block;
+      border-bottom: 1px solid #C6C3C6;
+      pointer-events: none;
+    }
+
+    >.bloc-content{
+      &.standalone{
+        padding-left:25px;
+      }
+
+      &:not(.standalone){
+        >.items{
+          > li{
+            >a,span{
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      >.items{
+          margin-left:0;
+          margin-bottom: 0;
+        > li{
+          padding-top:0;
+          padding-bottom: 0;
+          &:first-child{
+            a,span{
+              margin-top: 0px;
+            }
+          }
+          &:last-child{
+            a,span{
+              border-bottom: 0;
+            }
+          }
+          > a,span{
+            line-height: 25px;
+            display: block;
+            border-bottom: 1px solid #C6C3C6;
+            padding-left:25px;
+
+            &:hover{
+              font-weight: bold;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.slider{
+  box-shadow: 0 0 10px #888888;
+  >.bx-wrapper{
+    >.bx-viewport{
+      border-top:0 !important;
+      border-bottom: 0 !important;
+    }
+  }
+}
+
